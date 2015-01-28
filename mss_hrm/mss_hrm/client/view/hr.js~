@@ -1,0 +1,5 @@
+Template.HR.rendered = function(){
+$('#toggle-one').bootstrapToggle();
+$('.toggle-on').click(function(){$('#toggle-one').bootstrapToggle('off')});
+$('.toggle-off').click(function(){$('#toggle-one').bootstrapToggle('on')});
+};

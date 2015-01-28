@@ -1,0 +1,55 @@
+/***
+ * Home Page routing path
+ */
+Router.route('/', function () {
+  this.render('home',{
+    
+  });  
+});
+
+/***
+ * Register routing path
+ */
+Router.route('/register', function () {
+  this.render('register',{
+    
+  });
+});
+
+
+/***
+ * Route to handle HR section of initilizing employee joining
+ */
+
+Router.route('hr', {
+    path: '/initiate/joining/hr/:_id',
+    data: function(){
+        console.log(this.params._id);
+        employ1 =new MysqlSubscription('oneemploy',this.params._id);
+        console.log("employ1",employ1);
+        return empid=employ1;
+         
+     
+    }
+});
+
+/***
+ * Route to handle documentation section of initilizing employee joining
+ */
+Router.route('/initiate/joining/documentation', function () {
+  this.render('Documentation',{
+    
+  });
+});
+
+Router.route('/doc', function () {
+  this.render('doc',{
+  
+  });
+});
+
+Router.route('/document', function () {
+  this.render('document',{
+  
+  });
+});

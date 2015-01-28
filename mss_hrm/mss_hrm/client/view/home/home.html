@@ -1,0 +1,111 @@
+<head>
+  <title>HRM</title>
+  
+</head>
+<body>
+  <header>
+   <div class="page-header1 text-center">
+   <h2>Human Resource Management</h2>
+  </div>
+  </header>
+<div style="clear:both"></div>
+
+</body>
+
+
+<template name="home">
+
+ 
+  
+  <div class="col-md-4">
+    <div class="col-md-4"></div>
+  </div>
+
+    
+     <div class="col-md-4">
+      <form action="" method="post" id="homeform">
+      <p class="page-header">Select Employee</p> 
+      <div class="form-group">
+      <select class="form-control" id="sel1" name="emp_id">
+       <option selected="selected">---Select Employee--</option>
+       {{#each emp}}
+        <option value="{{id}}" >{{ this.username }}</option>
+       {{/each}}
+      </select>
+      </div>
+      <div>
+        <button class="btn btn-info btn-lg" id="Intiate">
+          <span class="glyphicon glyphicon-search"></span>
+          Intiate Joining
+        </button>
+        <button class="btn btn-info btn-lg">
+         <span class="glyphicon glyphicon-search"></span>
+         Intiate Relieving
+        </button>
+      </div>
+      </form>
+     </div>
+     
+     <!--{{>checkbox}}-->
+     {{>table}}
+     </template>
+    <template name="checkbox">
+    <div class="col-md-4"></div>
+    
+    
+    
+  <div class="container">  
+  <label class="check">
+   <input type="checkbox" value="">All
+   <input type="checkbox" value="">Pending
+   <input type="checkbox" value="">Complete
+  </label>
+  </div>
+</template>
+    <template name="table">
+        
+     <!--{{> reactiveTable collection=collection fields=fields settings=settings}}-->
+    
+      {{#each pending_record}}{{emp_info}}{{/each}}
+      <div class="col-md-4"></div>
+ <table  class="table" style="width:84%;margin-left:8%;margin-top:7%;">
+   <thead>
+      <tr>
+       <th>Employee ID</th>
+       <th>Employee Name</th>
+       <th>Pending Sections?</th>
+       <th>status</th>
+       <th>action</th>
+      </tr>
+    </thead>
+    <tbody>
+      
+      {{#each data}}
+     
+     <tr class="">
+       
+      <td>{{id}}</td>
+      <td>{{username}}</td>
+      <td>
+        {{doc_status id}}
+        <input type="hidden" value="{{id}}" id="values">
+        <!--<button class="btn btn-primary" id="submit">View</button>-->
+        
+      </td>
+      <td>{{getid id}}
+        {{emp_status id}}
+      </td>
+      <td>
+       
+        <button class="btn btn-primary" id="action">View</button></td>
+     
+     </tr>
+    
+      {{/each}}
+    
+    </tbody>
+  </table>
+ 
+</template>
+   
+ 

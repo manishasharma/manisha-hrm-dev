@@ -1,0 +1,214 @@
+<template name="network">
+<form action="" method="post" id ="network">
+   
+    {{#each employee1}}
+    <input type="hidden" id="user_id" value="{{id}}">
+	{{/each}}
+<table style="margin-left:25%;width:50%;">
+    {{#each employee1}}
+    <div class="select">
+       <h4>Responsible Person</h4>
+	 
+	<div class="responsible">
+	<select>
+	 
+	  
+        {{#each employee}}<option value="{{id}}" {{isMyselected username ../username}}  >{{ this.username }}</option>{{/each}}
+	
+        </select>
+	</div>
+	</div>
+    
+       <br/>
+       {{#if net}}
+       {{#each net}}
+
+  <tr>
+    <td>
+    <h4>Added static IP in Firewall?</h4>
+    </td>
+    <td>
+    <input id="n1" type="checkbox"  {{isMyCheckboxChecked static_IP}}>
+    </td>
+  </tr>
+  <br/>
+   <tr>
+    <td>
+   <h4>Gmail Id  Create strong password and configured in thunderbird?</h4>
+   </td>
+    <td>
+      <input id="n2" type="checkbox"  {{isMyCheckboxChecked Gmail_Id}}>
+    </td>
+   </tr>
+   <br/>
+   <tr>
+      <td>
+      <h4>Created Skype Id Email should be mss email and strong password </h4>
+      </td>
+      <td>
+      <input id="n3" type="checkbox"  {{isMyCheckboxChecked Skype_Id}}>
+       </td>
+    </tr>
+   <br/>
+   <tr>
+     <td>
+     <h4>Redmine Account </h4>
+     </td>
+     <td>
+     <input id="n4"  type="checkbox"  {{isMyCheckboxChecked Redmine_Account}}>
+      </td>
+    </tr>
+   <br/>
+   <tr>
+    <td>
+   <h4>Create Bitbucket Account </h4>
+   </td>
+    <td>
+   <input id="n5" type="checkbox"  {{isMyCheckboxChecked Bitbucket_Account}}>
+    </td>
+  </tr>
+   <br/>
+   
+    <tr>
+    <td>
+     <h4>Create Git Account</h4>
+     </td>
+     <td>
+     <input id="n6"  type="checkbox"  {{isMyCheckboxChecked Git_Account}}>
+     </td>
+     </tr>
+    <br/>
+
+    <tr>
+	<td>
+     <h4>Create Dropbox Account</h4>
+     </td>
+	<td>
+      <input id="n7"  type="checkbox"  {{isMyCheckboxChecked Dropbox_Account}}>
+	</td>
+      
+    </tr>
+     <br/>
+     
+    <tr>
+     <td>
+     <h4>Create Local Database User</h4>
+     </td>
+     <td>
+     <input id="n8"  type="checkbox" {{isMyCheckboxChecked Database_User}}>
+     </td>
+    </tr>
+    <br/>
+
+    <tr>
+	<td>
+    <h4>Create Local FTP account</h4>
+    </td>
+	<td>
+    <input id="n9" type="checkbox"  {{isMyCheckboxChecked FTP_account}}>
+	</td>
+    
+   </tr>
+    {{/each}}
+    {{else}}
+    {{>networkform}}
+    {{/if}}
+    {{/each}}
+
+
+
+
+<div>	<button class="btn btn-info btn" id="submit" value="Submit" >
+             save</button>
+</div>
+</table>
+</form>
+</template>
+<template name="networkform">
+     <tr>
+    <td>
+    <h4>Added static IP in Firewall?</h4>
+    </td>
+    <td>
+    <input id="n1" type="checkbox">
+    </td>
+  </tr>
+  <br/>
+   <tr>
+    <td>
+   <h4>Gmail Id  Create strong password and configured in thunderbird?</h4>
+   </td>
+    <td>
+      <input id="n2" type="checkbox" >
+    </td>
+   </tr>
+   <tr>
+      <td>
+      <h4>Created Skype Id Email should be mss email and strong password </h4>
+      </td>
+      <td>
+      <input id="n3" type="checkbox" >
+       </td>
+    </tr>
+   <br/>
+   <tr>
+     <td>
+     <h4>Redmine Account </h4>
+     </td>
+     <td>
+     <input id="n4"  type="checkbox">
+      </td>
+    </tr>
+   <br/>
+   <tr>
+    <td>
+   <h4>Create Bitbucket Account </h4>
+   </td>
+    <td>
+   <input id="n5" type="checkbox">
+    </td>
+  </tr>
+   <br/>
+   
+    <tr>
+    <td>
+     <h4>Create Git Account</h4>
+     </td>
+     <td>
+     <input id="n6"  type="checkbox">
+     </td>
+     </tr>
+    <br/>
+
+    <tr>
+	<td>
+     <h4>Create Dropbox Account</h4>
+     </td>
+	<td>
+      <input id="n7"  type="checkbox">
+	</td>
+      
+    </tr>
+     <br/>
+     
+    <tr>
+     <td>
+     <h4>Create Local Database User</h4>
+     </td>
+     <td>
+     <input id="n8"  type="checkbox">
+     </td>
+    </tr>
+    <br/>
+
+    <tr>
+	<td>
+    <h4>Create Local FTP account</h4>
+    </td>
+	<td>
+    <input id="n9" type="checkbox" >
+	</td>
+    
+   </tr>
+    
+</template>
