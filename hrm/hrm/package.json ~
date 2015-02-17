@@ -1,0 +1,20 @@
+{
+  "name": "hrm",
+  "version": "0.0.1",
+  "engines": {
+    "Meteor" :"1.0.3.1"
+    "npm":  "1.4.23"
+  },
+  "dependencies": {
+  
+     "aldeed:tabular": "1.0.5*" 
+     "aslagle:reactive-table":"0.6.2*" 
+     "bootstrap":"1.0.1"  
+     "ian:accounts-ui-bootstrap-3": "1.2.24*" 
+      "iron:router" : "1.0.7" 
+      "less": "1.0.12" 
+     "meteor-platform":"1.2.1"  
+     "numtel:mysql" :"0.0.20*" 
+     "twbs":"bootstrap" 
+  }
+}

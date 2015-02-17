@@ -1,0 +1,1 @@
+web: $HOME/.meteor/heroku_build/bin/node $HOME/.meteor/heroku_build/app/main.js

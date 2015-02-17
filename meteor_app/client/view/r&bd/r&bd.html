@@ -1,0 +1,100 @@
+<template name="rbd">
+<form  method="post" >
+    
+    
+    
+    
+    {{#each employee1}}
+    <input type="hidden" id="user_id" value="{{id}}">
+	{{/each}}
+<table style="margin-left:25%;width:50%;margin-top:3%">
+    
+     {{#each employee1}}
+    
+    <h4>Responsible Person</h4>
+    
+	<div class="responsible">
+	<select style="">
+	 
+	  
+         {{#each employee}}<option value="{{id}}" {{isMyselected username ../username}}  >{{ this.username }}</option>{{/each}}
+	
+        </select>
+	</div>
+    
+    <br/>
+    {{#if rbd}}
+    {{#each rbd}}
+   <tr>
+      <td>
+      <h4>Create Biddle Account </h4>
+      </td>
+      <td>
+      <input id="rd1"  type="checkbox" {{isMyCheckboxChecked Biddle}}>
+      </td>
+   </tr>
+   <br/>
+   <tr>
+      <td>
+      <h4>Cover Letter / All relevant data</h4>
+      </td>
+      <td>
+      <input id="rd2"  type="checkbox" {{isMyCheckboxChecked cover_letter}}>
+      </td>
+     </tr>
+   <br/>
+    <tr>
+      <td>
+      <h4>Google Drive Access</h4>
+      </td>
+      <td>
+      <input id="rd3"  type="checkbox" {{isMyCheckboxChecked google_drive}}>
+      </td>
+    </tr>
+    {{/each}}
+    {{else}}
+    {{> formrbd}}
+    {{/if}}
+    {{/each}}
+   
+    
+     <div>
+	
+	<button class="btn btn-info btn" id="submit1" value="Submit" style="margin-top: -60%;margin-left:94%;" > SAVE </button>
+         <a href="../"><button type="button" class="btn btn-info btn" style="margin-top:-69%;margin-left:-24%;">BACK</button></a>
+    
+    
+   </div>
+</table>
+</form>
+</template>
+
+<template name="formrbd">
+    <tr>
+      <td>
+      <h4>Create Biddle Account </h4>
+      </td>
+      <td>
+      <input id="rd1"  type="checkbox">
+      </td>
+   </tr>
+   <br/>
+   <tr>
+      <td>
+      <h4>Cover Letter / All relevant data</h4>
+      </td>
+      <td>
+      <input id="rd2"  type="checkbox" >
+      </td>
+     </tr>
+   <br/>
+    <tr>
+      <td>
+      <h4>Google Drive Access</h4>
+      </td>
+      <td>
+      <input id="rd3"  type="checkbox" >
+      </td>
+    </tr>
+    
+</template>

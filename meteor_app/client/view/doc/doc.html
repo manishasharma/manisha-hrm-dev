@@ -1,0 +1,37 @@
+
+<template name="doc">
+ <div style="clear:both"></div>
+  
+   
+       
+       <div style="margin-left: 25%;">
+        <h2>
+       
+          Joining Checklist of {{#each employee1}}{{id}}/{{username}}{{/each}}
+        
+        </h2>
+       </div>
+     
+        
+  
+<div role="tabpanel">
+
+  <!-- Nav tabs -->
+  <ul class="nav nav-tabs" role="tablist">
+    <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">HR</a></li>
+    <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">documentation</a></li>
+    <li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">R&BD</a></li>
+    <li role="presentation"><a href="#settings" aria-controls="settings" role="tab" data-toggle="tab">Network</a></li>
+  </ul>
+
+  <!-- Tab panes -->
+  <div class="tab-content">
+    <div role="tabpanel" class="tab-pane active" id="home">{{> HR}}</div>
+    <div role="tabpanel" class="tab-pane" id="profile">{{> documentation}}</div>
+    <div role="tabpanel" class="tab-pane" id="messages">{{> rbd}}</div>
+    <div role="tabpanel" class="tab-pane" id="settings">{{> network}}</div>
+  </div>
+
+</div>
+</template>
+

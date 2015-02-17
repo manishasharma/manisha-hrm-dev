@@ -1,0 +1,346 @@
+<template name="documentation">
+    
+<form action="" method="post" id="docs">
+    <tr>
+    
+    {{#each employee1}}
+    <input type="hidden" value="{{id}}" id="user_id">
+	{{/each}}
+   
+    </tr>
+    <br/>
+    
+  <table  style="margin-left:14%;">
+    {{#each employee1}}
+  
+    
+    <tr>
+	
+	
+    <h4>Responsible Person</h4>
+         <td>
+        <select style="">
+	  
+        {{#each employee}}<option value="{{id}}" {{isMyselected username ../username}}  >{{ this.username }}</option>{{/each}}
+	
+        </select>
+        
+      </td>
+    </tr>
+    {{/each}}
+    <br/>
+       {{#if doc}}
+      {{#each doc}}
+    <tr>
+      <td>
+        <h4>Copy of Offer Letter Given</h4>
+      </td>
+      <td>
+	
+        <input id="check"  type="checkbox" {{isMyCheckboxChecked Offer_Letter}}>
+       </td>
+    </tr>
+    <br/>
+    <tr>
+       <td>
+       <h4>ID Proof</h4>
+       </td>
+	<td>
+        <input id="check1"  type="checkbox" {{isMyCheckboxChecked ID_Proof}}>
+        </td>
+    </tr>
+    <br/>
+     <tr>
+	<td>
+           <h4>Address Proof</h4>
+         </td>
+	<td>
+           <input id="check2"  type="checkbox" {{isMyCheckboxChecked Address_Proof}}>
+        </td>
+    </tr>
+     <br/>
+     <tr>
+	<td>
+        <h4>Date of Birth certificate</h4>
+        </td>
+	<td>
+        <input id="check3"  type="checkbox" {{isMyCheckboxChecked Birth_certificate}}>
+         </td>
+    </tr>
+     <br/>
+     <tr>
+	<td>
+        <h4>Training Certificate if Fresher</h4>
+	</td>
+	<td>
+        <input id="check4" checked type="checkbox" {{isMyCheckboxChecked Training_Certificate}}>
+	</td>
+    </tr>
+     <br/>
+     <tr>
+	<td>
+        <h4>Last 3 Salary Slips</h4>
+        </td>
+	<td>
+        <input id="check5" type="checkbox" {{isMyCheckboxChecked Salary_Slips}}>
+        </td>
+    </tr>
+     <br/>
+    <tr>
+	<td>
+        <h4>Passport Size Photographs 8 </h4>
+       </td>
+	<td>
+        <input id="check6"  type="checkbox" {{isMyCheckboxChecked Photographs}}>
+        </td>
+    </tr>
+    
+    {{/each}}
+    {{else}}
+    {{> docform3}}
+    {{/if}}
+    </table>
+  
+  
+<table style="margin-left:46%;margin-top:-28%;">
+    {{#if doc}}
+    {{#each doc}}
+    <tr>
+       <td>
+       <h4>Qualification Certificates</h4>
+       </td>
+	<td>
+       <input id="check7"  type="checkbox" {{isMyCheckboxChecked Qualification_Certificates}}>
+        </td>
+    </tr>
+    <br/>
+    <tr>
+	<td>
+        <h4>Experience/Relieving letter from previous organization</h4>
+        </td>
+        <td>
+        <input id="check8" type="checkbox" {{isMyCheckboxChecked Experience_letter}}>
+        </td>
+    </tr>
+    <br/>
+    <tr>
+	<td>
+        <h4>Medical Certificate & Fitness Certificate</h4>
+        </td>
+	<td>
+        <input id="check9" type="checkbox" {{isMyCheckboxChecked Medical_Certificate}}>
+        </td>
+    </tr>
+    <br/>
+    <tr>
+	<td>
+       <h4>Bank Account Number </h4>
+       </td>
+	<td> 
+        <input id="check10"  type="checkbox" {{isMyCheckboxChecked Account_Number}}>
+        </td>
+    </tr>
+    <br/>
+    <tr>
+	<td>
+       <h4>Joining Report of New Employees</h4>
+      </td>
+	<td>
+        <input id="check11"  type="checkbox" {{isMyCheckboxChecked Joining_Report}}>
+      </td>
+    </tr>
+    <br/>
+    <tr>
+       <td>
+       <h4>Code of Conduct and Ethical Standards</h4>
+       </td>
+	<td>
+       <input id="check12" type="checkbox" {{isMyCheckboxChecked Ethical_Standards}}>
+        </td>
+       </tr>
+    <br/>
+    <tr>
+	<td>
+        <h4>Employee Agreement</h4>
+        </td>
+	<td>
+        <input id="check13" type="checkbox" {{isMyCheckboxChecked Employee_Agreement}}>
+        </td>
+    </tr>
+    <br/>
+    <tr>
+	<td>
+        <h4>Acknowledgement of Appointment Letter</h4>
+        </td>
+	<td>
+        <input id="check14" type="checkbox" {{isMyCheckboxChecked Appointment_Letter}}>
+        </td>
+        </tr>
+    {{/each }}
+    {{else}}
+    {{> docform2}}
+    {{/if}}
+    <br/>
+    </table>
+        
+ 
+        <div class="button">
+	    <a href="../"><button type="button" class="btn btn-info btn" style="margin-top:-143%;margin-left:-51%;">BACK</button></a>
+
+   	<button class="btn btn-info btn" type="submit" id="submit" value="Submit" style="margin-top:-141%;margin-left:61%;">
+	    SAVE
+	</button>
+	</div>
+				
+    </form>
+    
+    
+</template>
+
+
+
+<template name="docform2">
+    <div style="margin-top:27%;">
+    
+    <tr>
+	
+       <td>
+       <h4>Qualification Certificates</h4>
+       </td>
+	<td>
+       <input id="check7"  type="checkbox">
+        </td>
+    </tr>
+    <br/>
+    <tr>
+	<td>
+        <h4>Experience/Relieving letter from previous organization</h4>
+        </td>
+        <td>
+        <input id="check8" type="checkbox" >
+        </td>
+    </tr>
+    <br/>
+    <tr>
+	<td>
+        <h4>Medical Certificate & Fitness Certificate</h4>
+        </td>
+	<td>
+        <input id="check9" type="checkbox" >
+        </td>
+    </tr>
+    <br/>
+    <tr>
+	<td>
+       <h4>Bank Account Number </h4>
+       </td>
+	<td> 
+        <input id="check10"  type="checkbox" >
+        </td>
+    </tr>
+    <br/>
+    <tr>
+	<td>
+       <h4>Joining Report of New Employees</h4>
+      </td>
+	<td>
+        <input id="check11"  type="checkbox" >
+      </td>
+    </tr>
+    <br/>
+    <tr>
+       <td>
+       <h4>Code of Conduct and Ethical Standards</h4>
+       </td>
+	<td>
+       <input id="check12" type="checkbox" >
+        </td>
+       </tr>
+    <br/>
+    <tr>
+	<td>
+        <h4>Employee Agreement</h4>
+        </td>
+	<td>
+        <input id="check13" type="checkbox">
+        </td>
+    </tr>
+    <br/>
+    <tr>
+	<td>
+        <h4>Acknowledgement of Appointment Letter</h4>
+        </td>
+	<td>
+        <input id="check14" type="checkbox" >
+        </td>
+        </tr>
+    </div>
+    
+</template>
+<template name="docform3">
+    
+    <tr>
+      <td>
+        <h4>Copy of Offer Letter Given</h4>
+      </td>
+      <td>
+        <input id="check"  type="checkbox">
+       </td>
+    </tr>
+    <br/>
+      <tr>
+       <td>
+       <h4>ID Proof</h4>
+       </td>
+	<td>
+        <input id="check1"  type="checkbox">
+        </td>
+    </tr>
+    <br/>
+  <tr>
+	<td>
+           <h4>Address Proof</h4>
+         </td>
+	<td>
+           <input id="check2"  type="checkbox" >
+        </td>
+    </tr>
+    <br/>
+   <tr>
+	<td>
+        <h4>Date of Birth certificate</h4>
+        </td>
+	<td>
+        <input id="check3"  type="checkbox">
+         </td>
+    </tr>
+    <br/>
+   <tr>
+	<td>
+        <h4>Training Certificate if Fresher</h4>
+	</td>
+	<td>
+        <input id="check4"  type="checkbox" >
+	</td>
+    </tr>>
+    <br/>
+    <tr>
+	<td>
+        <h4>Last 3 Salary Slips</h4>
+        </td>
+	<td>
+        <input id="check5" type="checkbox" >
+        </td>
+    </tr>
+    <br/>
+   <tr>
+	<td>
+        <h4>Passport Size Photographs 8 </h4>
+       </td>
+	<td>
+        <input id="check6"  type="checkbox" >
+        </td>
+    </tr>
+ 
+    
+</template>

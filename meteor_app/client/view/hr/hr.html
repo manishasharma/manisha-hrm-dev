@@ -1,0 +1,125 @@
+<template name="HR">
+    <br/>
+<form action="" method="post" id="hr_form">
+    {{#each employee1}} <input type="hidden" id="user_id" value="{{id}}">{{/each}}
+   <table style="margin-left:25%;width:50%;">
+    {{#each employee1}}
+    
+      <div class="select">
+      <h4>Responsible Person</h4>
+      <div class="responsible">
+    
+        <select>
+	  
+        {{#each employee}}<option value="{{id}}" {{isMyselected username ../username}}  >{{ this.username }}</option>{{/each}}
+	
+        </select>
+	</div>
+      </div>
+        
+    
+    <br/>
+    {{#if hr}}
+    
+    {{#each hr}}
+     
+      <tr>
+       <td>
+        <h4>Updated Employee Information Sheet ? {{emp_info}}</h4>
+       </td>
+       <td>
+        <input id="toggle-one" value=" " name="hr[]"  type="checkbox"  {{isMyCheckboxChecked emp_info}}>
+       </td>
+    </tr>
+   
+    <br/>
+   <tr>
+      <td>
+      <h4>Added to Address Book from list of MSS ?</h4>
+      </td>
+      <td>
+      <input id="toggle" name="hr[]" type="checkbox" value="" {{isMyCheckboxChecked address_book}}>
+      </td>
+      <br/>
+
+    </tr>
+   <br/>
+    <tr>
+	<td>
+        <h4>Added to Biometric System ?</h4>
+	</td>
+	<td>
+        <input id="toggle2" name="hr[]" type="checkbox" value="" {{isMyCheckboxChecked Biometric_System}}>
+	</td>
+    </tr>
+    <br/>
+    <tr>
+       <td>
+       <h4>MSS-Team Folder Updated ? </h4>
+       </td>
+       <td>
+       <input id="toggle3" name="hr[]"  type="checkbox" {{isMyCheckboxChecked Folder_Updated}}>
+       </td>
+       </tr>
+
+    {{/each}}
+    {{else}}
+    {{> hrform}}
+    {{/if}}
+    {{/each}}
+    <br/>
+    <tr> <a href="../"><button type="button" class="btn btn-info btn" style="margin-top:-87%;margin-left:-24%;">BACK</button></a></tr>
+    <tr>
+	<button class="btn btn-info btn" type="submit" id="submit" value="Submit" style="margin-top:-94%;margin-left:98%;" >
+
+          SAVE
+	</button>
+	</tr>
+
+</table>
+</form>
+</template>
+
+
+<template name="hrform">
+    
+     <tr>
+       <td>
+        <h4>Updated Employee Information Sheet ? </h4>
+       </td>
+       <td>
+        <input id="toggle-one" value=" " name="hr[]"  type="checkbox" >
+       </td>
+    </tr>
+   
+    <br/>
+   <tr>
+      <td>
+      <h4>Added to Address Book from list of MSS ?</h4>
+      </td>
+      <td>
+      <input id="toggle" name="hr[]" type="checkbox" value="" >
+      </td>
+      <br/>
+
+    </tr>
+   <br/>
+    <tr>
+	<td>
+        <h4>Added to Biometric System ?</h4>
+	</td>
+	<td>
+        <input id="toggle2" name="hr[]" type="checkbox" value="" >
+	</td>
+    </tr>
+    <br/>
+    <tr>
+       <td>
+       <h4>MSS-Team Folder Updated ? </h4>
+       </td>
+       <td>
+       <input id="toggle3" name="hr[]" type="checkbox">
+       </td>
+       </tr>
+</template>
+

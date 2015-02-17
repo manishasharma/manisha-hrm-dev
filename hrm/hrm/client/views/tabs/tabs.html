@@ -1,0 +1,33 @@
+<template name="tabs">
+    <div style="clear:both"></div>
+    <div class="container">
+        
+        <h2 class="checklist">Joining Checklist of {{#each employee1}}{{ename}}/{{eid}}{{/each}} </h2>
+       <h2>
+        <a href="../"><button type="button" class="btn btn-info btn-lg back">Back</button></a>
+        <form id="myform">
+        <input type="submit" class="btn btn-info btn-lg save " id="submit" value="Save Changes" >
+       </form>
+       </h2>
+    </div>
+<div role="tabpanel"  >
+
+  <!-- Nav tabs -->
+  <ul class="nav nav-pills tab1" role="tablist">
+    <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab" id="home_bt">HR</a></li>
+    <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Documents</a></li>
+    <li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">R&BD</a></li>
+    <li role="presentation"><a href="#settings" aria-controls="settings" role="tab" data-toggle="tab">Network</a></li>
+  </ul>
+  <div class="container con">
+<div class="tab-content" style="overflow: hidden">
+  <div role="tabpanel" class="tab-pane fade in active" id="home">{{> hr}}</div>
+  <div role="tabpanel" class="tab-pane fade" id="profile">{{> document}}</div>
+  <div role="tabpanel" class="tab-pane fade" id="messages">{{> rbd}}</div>
+  <div role="tabpanel" class="tab-pane fade" id="settings">{{> network}}</div>
+</div>
+
+</div>
+</div>
+   
+</template>
